@@ -14,6 +14,14 @@ class GameBoard {
     })
   }
 
+  resetBoard() {
+    this.board = [
+      ['', '', ''],
+      ['', '', ''],
+      ['', '', '']
+    ]
+  }
+
   isFull() {
     return !this.board.some(row => row.some(cell => cell === ''))
   }
