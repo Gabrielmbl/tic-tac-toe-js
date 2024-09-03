@@ -31,8 +31,8 @@ class Game {
   playRound() {
     this.gameBoard.displayOnConsole()
     console.log(`${this.currentPlayer.name}'s turn: `)
-    const x = prompt('X coordinate: ')
-    const y = prompt('Y coordinate: ')
+    // const x = prompt('X coordinate: ')
+    // const y = prompt('Y coordinate: ')
     if (this.move(this.currentPlayer, x, y) === true) {
       this.switchPlayers()
     }
@@ -49,8 +49,3 @@ class Game {
   }
 
 }
-
-board = new GameBoard()
-p1 = new Player('gabriel', 'X')
-p2 = new Player('Lucas', 'O')
-game = new Game(board, p1, p2)
