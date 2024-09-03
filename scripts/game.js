@@ -9,7 +9,12 @@ class Game {
   move(player, x, y) {
     x = parseInt(x, 10)
     y = parseInt(y, 10)
-    this.gameBoard.board[x][y] = player.symbol
+    if (this.gameBoard.board[x][y] === '') { 
+      this.gameBoard.board[x][y] = player.symbol
+      return true
+    } else {
+      false
+    }
   }
 
   switchPlayers() {
@@ -28,8 +33,9 @@ class Game {
     console.log(`${this.currentPlayer.name}'s turn: `)
     const x = prompt('X coordinate: ')
     const y = prompt('Y coordinate: ')
-    this.move(this.currentPlayer, x, y)
-    this.switchPlayers()
+    if (this.move(this.currentPlayer, x, y) === true) {
+      this.switchPlayers()
+    }
   }
 
   gameResults() {
